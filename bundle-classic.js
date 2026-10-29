@@ -7924,7 +7924,7 @@
         // PASTE URL GOOGLE APPS SCRIPT ANDA DI BAWAH INI:
         // Domain sendiri dulu; *.workers.dev diblokir sebagian jaringan (WiFi/operator tertentu).
         // authFetch() pindah ke alamat berikutnya kalau gagal & mengingat yang berhasil.
-        const AUTH_BASES = ["https://auth.affiliatego.id/", "https://affgo-auth.mursalinasrul.workers.dev/"];
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwjrC0JgqBEtnWWG-aAOpbBKW2X6cpgTz-zUHv2oAzgWzXWXQwtV89FBnLNOrn5Vnsl/exec";
         let SCRIPT_URL = (function() {
             try {
                 const saved = localStorage.getItem("affgo_auth_base");
