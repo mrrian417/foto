@@ -7924,18 +7924,20 @@
         // PASTE URL GOOGLE APPS SCRIPT ANDA DI BAWAH INI:
         // Domain sendiri dulu; *.workers.dev diblokir sebagian jaringan (WiFi/operator tertentu).
         // authFetch() pindah ke alamat berikutnya kalau gagal & mengingat yang berhasil.
-        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwjrC0JgqBEtnWWG-aAOpbBKW2X6cpgTz-zUHv2oAzgWzXWXQwtV89FBnLNOrn5Vnsl/exec";
-        let SCRIPT_URL = (function() {
-            try {
-                const saved = localStorage.getItem("affgo_auth_base");
-                if (AUTH_BASES.indexOf(saved) !== -1) return saved;
-            } catch (e) {}
-            return AUTH_BASES[0];
-        })();
-        const APP_SECRET = "TKD-2025-s3cr3t-k3y-9xKm2pQr7nVw4L";
-        // ID produk harus cocok persis dengan key di PRODUCTS object di appscript.txt (GAS).
-        // Tanpa ini, server fallback cari email di SEMUA sheet → email VocaLive/TikDance dll. bisa login ke AffGo.
-        const PRODUCT_ID = "affiliate-go";
+        const AUTH_BASES = [
+    "https://script.google.com/macros/s/AKfycbwjrC0JgqBEtnWWG-aAOpbBKW2X6cpgTz-zUHv2oAzgWzXWXQwtV89FBnLNOrn5Vnsl/exec"
+];
+
+let SCRIPT_URL = (function() {
+    try {
+        const saved = localStorage.getItem("affgo_auth_base");
+        if (AUTH_BASES.indexOf(saved) !== -1) return saved;
+    } catch (e) {}
+    return AUTH_BASES[0];
+})();
+
+const APP_SECRET = "TKD-2025-s3cr3t-k3y-9xKm2pQr7nVw4L";
+const PRODUCT_ID = "affiliate-go";
 
         // ==================== BEBAS IKLAN — KONFIGURASI ====================
         // GANTI URL DI BAWAH SAAT SUDAH SIAP:
